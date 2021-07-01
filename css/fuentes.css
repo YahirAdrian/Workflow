@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url('../src/fonts/Montserrat/Montserrat-Black.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-BlackItalic.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-Bold.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-BoldItalic.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-ExtraBold.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-Italic.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-Light.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-LightItalic.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-Medium.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-MediumItalic.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-Regular.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-SemiBold.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-SemiBoldItalic.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-Thin.ttf'),
+        url('../src/fonts/Montserrat/Montserrat-ThinItalic.ttf'),
+}
+
+@font-face {
+    font-family: "Arvo";
+    src:url('../src/fonts/Arvo/Arvo-Bold.ttf'),
+        url('../src/fonts/Arvo/Arvo-BoldItalic.ttf'),
+        url('../src/fonts/Arvo/Arvo-Italic.ttf'),
+        url('../src/fonts/Arvo/Arvo-Regular.ttf');
+}
