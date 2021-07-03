@@ -65,10 +65,21 @@ header{
 .icono{
     text-align: center;
 }
+
+.alternative-show{
+    height: auto !important;
+    opacity: 1 !important;
+}
 .icono .alternative{
     font-family: Monserrat;
     font-size: 0.6em;
-    display: none;
+    opacity: 0;
+    height: 0;
+}
+
+.transparent-background{
+    background-color: #3c3048;
+    border-radius: 5px;
 }
 
 
@@ -89,7 +100,7 @@ header{
     min-width: 350px;
     max-width: 550px;
     background-color: #F1F1F182;
-    margin: 50px auto;
+    margin: 25px auto;
     padding: 25px;
     text-align: center;
     border-radius: 20px;
@@ -159,7 +170,7 @@ header{
     height: 50px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin: auto;
     font-size: 0.85em;
 }
@@ -175,4 +186,22 @@ header{
 .marcas #actual{
     background-color: #f58e00;
     transform: translateX(-10px);
+}
+#nueva-tarea{
+    width: 100px;
+    height: 2.5em;
+    min-height: fit-content;
+    display: block;
+    position: absolute;
+    top: -80px;
+    right: 15px;
+    border-radius: 10px;
+    color: #FFF;
+    background-color: #1f0438;
+    border: 2px solid #19022f;
+    cursor: pointer;
+}
+
+#nueva-tarea:hover{
+    background-color: #3d2455;
 }
