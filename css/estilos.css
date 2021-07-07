@@ -137,7 +137,7 @@ header{
     width: 95%;
     height: 25px;
     background: #C0DA1F;
-    background: -webkit-linear-gradient(left, #C0DA1F 20%, #FFF 0%);
+    background: -webkit-linear-gradient(left, #C0DA1F 0%, #FFF 0%);
     margin: auto;
     border-radius: 12.5px;
     border: 1px solid #030303;
@@ -181,6 +181,7 @@ header{
     position: relative;
     z-index: 1;
     display: inline-block;
+    cursor: pointer;
 }
 
 .marcas #actual{

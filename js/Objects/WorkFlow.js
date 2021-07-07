@@ -1,5 +1,5 @@
-import Session from "./session";
-import TimeLine from "./Timeline";
+import Session from "./session.js";
+import TimeLine from "./Timeline.js";
 
 class WorkFlow{
     constructor(session = new Session(), timeline = new TimeLine()){

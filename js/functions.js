@@ -31,14 +31,14 @@ function startClock(){
         hour: (date.getHours() >12) ? date.getHours()-12 : date.getHours(),
         minutes: (date.getMinutes() < 10) ? "0" + date.getMinutes() :  "" + date.getMinutes(),
         am_pm: (date.getHours() >= 12) ? 'PM' : 'AM',
-        day: date.getDate(),
+        dayOfMonth: date.getDate(),
         dayOfWeek: daysOfWeek[date.getDay()-1],
         month: months[date.getMonth()],
         year: date.getFullYear()
     }
     
     clockComponents.timeLabel.textContent = `${time.hour}:${time.minutes} ${time.am_pm}`;
-    clockComponents.dateLabel.textContent = `${time.dayOfWeek} ${time.day} de ${time.month} del ${time.year}`;
+    clockComponents.dateLabel.textContent = `${time.dayOfWeek} ${time.dayOfMonth} de ${time.month} del ${time.year}`;
 }
 
 function isEmpty(obj) {
@@ -49,21 +49,29 @@ function isEmpty(obj) {
     return true;
 }
 
-function startSession(){
-    let session;
+function getSession(){
     if(localStorage.getItem('session')){
-        const sessionData = JSON.parse(localStorage.getItem('session'));
-        session = new Session(sessionData.data, sessionData.timeline);
+        const session = JSON.parse(localStorage.getItem('session'));
+        return new Session(session.data, session.timeline);
 
     }else{
-
+        //Open a form to create a session workflow
+        console.log('Not sesssion found')
+        return null;
     }
 }
 
+function parseStringToTime(stringTime){
+    return {
+        hours: stringTime.length === 4? parseInt(stringTime.substr(stringTime.indexOf(':')-1, 1)) : parseInt(stringTime.substr(stringTime.indexOf(':')-2, 2)),
+        minutes: parseInt(stringTime.substr(stringTime.indexOf(':')+1, 2)),
+    };
+}
 
 export { 
     addEventsToNavBar,
     startClock,
     isEmpty,
-    startSession
+    getSession,
+    parseStringToTime,
 };
