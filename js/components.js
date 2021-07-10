@@ -23,8 +23,22 @@ const timeLineComponents = {
     endTimeLabel: document.querySelector('#fin')
 }
 
+const newMarkAlertComponents = {
+    alert: document.querySelector('#caja-nueva-marca'),
+    form: document.querySelector('#formulario-marca'),
+    btnCancel: document.querySelector('#btn-cancelar'),
+    formInputs: {
+        title: document.querySelector('#titulo-marca'),
+        time: document.querySelector('#hora-marca'),
+        description: document.querySelector('#descripcion-marca'),
+        importance: document.querySelector('#importancia-marca'),
+    },
+    btnSubmit: document.querySelector('#submit-marca')
+}
+
 export {
     navCompoments,
     clockComponents,
-    timeLineComponents
+    timeLineComponents,
+    newMarkAlertComponents
 };

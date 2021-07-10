@@ -19,7 +19,7 @@ class WorkFlow{
         this.timeline = timeline;
     }
 
-    getTimeline(){
+    getTimeLine(){
         return this.timeline;
     }
 

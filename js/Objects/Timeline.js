@@ -1,5 +1,5 @@
 import { timeLineComponents } from '../components.js';
-import { parseStringToTime } from '../functions.js';
+import { parseStringToTime, updateLocalStorage} from '../functions.js';
 
 class TimeLine{
 
@@ -33,21 +33,57 @@ class TimeLine{
 
     addMark(mark){
         this.marks.push(mark);
+        updateLocalStorage();
     }
 
-    removeMark(markId){
-
+    removeMark(markToRemove){
+        this.marks = this.marks.filter((mark) => mark !== markToRemove);
+        this.showMarks();
+        updateLocalStorage();
     }
 
     showMarks(){
         
+        while(timeLineComponents.marksBox.firstChild){
+            timeLineComponents.marksBox.removeChild(timeLineComponents.marksBox.firstChild);
+        }
+
         this.marks.forEach((mark)=>{
+            //DOM scripting
             const newMark = document.createElement('div');
+            const markDialogBox = document.createElement('div');
+            const markTitle = document.createElement('h3');
+            const markDialogTime = document.createElement('span');
+            const markDescription = document.createElement('p');
+            const deleteMarkButton = document.createElement('img');
+            
+            //Assign textContent
+            markDescription.textContent = mark.description;
+            markDialogTime.textContent = mark.time;
+            markTitle.textContent =  mark.title;
+            markDialogBox.classList.add('mark-dialog');
+            deleteMarkButton.src="src/icons/eliminar.svg";
+            deleteMarkButton.classList.add('remove-mark-icon');
+            deleteMarkButton.alt = "Eliminar tarea";
+            deleteMarkButton.addEventListener('click', ()=>{this.removeMark(mark)});
+            
+            markDialogBox.append(deleteMarkButton, markDialogTime, markTitle, markDescription);
+            newMark.appendChild(markDialogBox)
+
             newMark.classList.add('marca');
 
             const markTime  = parseStringToTime(mark.time);
             newMark.style.left = `${this.getTimePercentage(markTime)}%`;
             timeLineComponents.marksBox.appendChild(newMark);
+            
+            //Show orr hide the dialog box 
+            newMark.addEventListener('click', ()=>{
+                if(newMark.firstChild.style.display === 'none'){
+                    newMark.firstChild.style.display = 'block';
+                }else{
+                    newMark.firstChild.style.display = 'none';
+                }
+            } );
         });
 
     }
@@ -101,10 +137,10 @@ class TimeLine{
         
         //Next do a rule of three to get the percentage
         percentage = (lapsedMinutes * 100) / totalMinutesDifference;
+        percentage = (percentage >= 100) ? 100 :percentage ;
         
         //And finally paint percentage on progress bar
         timeLineComponents.timeLine.style = `background: -webkit-linear-gradient(left, #C0DA1F ${percentage}%, #FFF 0%);`;
-        console.log(timeLineComponents.timeLine)
     }
     
 }

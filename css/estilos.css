@@ -134,7 +134,7 @@ header{
 }
 
 .linea-del-tiempo{
-    width: 95%;
+    width: 100%;
     height: 25px;
     background: #C0DA1F;
     background: -webkit-linear-gradient(left, #C0DA1F 0%, #FFF 0%);
@@ -179,7 +179,7 @@ header{
     height: 25px;
     background-color: #3F49A7;
     position: relative;
-    z-index: 1;
+    z-index: 0;
     display: inline-block;
     cursor: pointer;
 }
@@ -205,4 +205,111 @@ header{
 
 #nueva-tarea:hover{
     background-color: #3d2455;
+}
+
+.alert{
+    position: fixed;
+    background: #00000036;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 2;
+}
+
+.alert form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50vh;
+    height: 50vh;
+    min-height: 400px;
+    overflow: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    box-shadow: inset -2px -3px 3px 2px #d2d2d2;
+}
+
+#btn-cancelar{
+    position: absolute;
+    right: 20px;
+    background: transparent;
+    border: none;
+}
+
+.caja-input{
+    margin: 15px;
+}
+
+.caja-input label{
+    font-weight: bold;
+    padding: 3px 6px;
+}
+
+#submit-marca{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 85%;
+    height: 2em;
+    color: #fff;
+    font-size: 0.9em;
+    border: 2px solid #673ab7;
+    background-color: #3a2a49;
+    cursor: pointer;
+    margin: auto;
+}
+
+#submit-marca:hover{
+    background-color: #3a2a49ea;
+}
+
+.mark-dialog{
+    width: 200px;
+    height: auto;
+    max-height: 150px;
+    position: absolute;
+    overflow: auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 13px;
+    bottom: 40px;
+    left: -65px;
+    display: none;
+    border: 2px solid #3a2a49;
+    z-index: 1;
+    cursor:auto;
+}
+
+.mark-dialog h3{
+    color: #000;
+}
+
+.mark-dialog span{
+    font-size: 1.15em;
+    color: #002654;
+    font-weight: bold;
+}
+
+.mark-dialog p{
+    font-size: 0.75em;
+}
+
+.error{
+    color: red;
+    font-size: 0.85em;
+}
+
+.remove-mark-icon{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }

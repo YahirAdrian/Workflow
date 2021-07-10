@@ -53,7 +53,36 @@
                 <span id="fecha">Jueves 1 de Junio del 2021</span>
             </div>
 
+            <div class="alert" id="caja-nueva-marca" style="display: none;">
+                <form action="#" id="formulario-marca">
+                    <a href="#" id="btn-cancelar">
+                        <img src="src/icons/cancelar.svg" alt="Cancelar" width="25px"/>
+                    </a>
 
+                    <h3>Nueva tarea</h3>
+                    <div class="caja-input">
+                        <label for="titulo-marca">Titulo</label>
+                        <input type="text" placeholder="Ej. Revisar el correo" maxlength="80" id="titulo-marca" required/>
+                    </div>
+
+                    <div class="caja-input">
+                        <label for="hora-marca">Hora</label>
+                        <input type="time" id="hora-marca" required/>
+                    </div>
+
+                    <div class="caja-input">
+                        <label for="descripcion-marca">Descripcion (opcional)</label>
+                        <textarea id="descripcion-marca" cols="30" rows="5"  style="resize: none; overflow: auto;"></textarea>
+                    </div>
+
+                    <div class="caja-input">
+                        <input type="checkbox" id="importancia-marca"/>
+                        <label for="importancia-marca">Marcar como importante</label>
+                    </div>
+
+                    <input type="submit" value="Crear" id="submit-marca"/>
+                </form>
+            </div>
             <div class="caja-linea">
 
                 <div class="linea-del-tiempo">

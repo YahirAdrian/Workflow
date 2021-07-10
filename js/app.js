@@ -1,7 +1,9 @@
 import {
     addEventsToNavBar,
     startClock,
-    getSession
+    getSession,
+    addEventsToTimeLine,
+    addMarkFormEvents
 } from './functions.js';
 import TimeLine from './Objects/Timeline.js';
 import WorkFlow from './Objects/WorkFlow.js';
@@ -10,14 +12,16 @@ import WorkFlow from './Objects/WorkFlow.js';
     window.addEventListener('DOMContentLoaded', ()=>{
         
         addEventsToNavBar();
+        addEventsToTimeLine();
+        addMarkFormEvents();
         setInterval(startClock, 1000);
     });
     
-    const app = new WorkFlow();
+    window.app = new WorkFlow();
     // Verify if session has alredy started before
     const {timeline} = getSession();
     app.setSession(getSession());
     app.setTimeline(new TimeLine(timeline.startTime, timeline.endTime, timeline.marks));
-    app.getTimeline().start();
-    console.log(app.getTimeline())
+    app.getTimeLine().start();
+
 })();
