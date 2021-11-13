@@ -216,7 +216,7 @@ header{
     z-index: 2;
 }
 
-.alert form{
+.alert form, #configurar-sesion{
     position: absolute;
     top: 0;
     right: 0;
@@ -250,7 +250,7 @@ header{
     padding: 3px 6px;
 }
 
-#submit-marca{
+#submit-marca, #config-submit{
     position: absolute;
     bottom: 20px;
     left: 0;
@@ -265,7 +265,7 @@ header{
     margin: auto;
 }
 
-#submit-marca:hover{
+#submit-marca:hover, #config-submit:hover{
     background-color: #3a2a49ea;
 }
 
@@ -312,4 +312,20 @@ header{
     top: 10px;
     right: 10px;
     cursor: pointer;
+}
+
+#configurar-sesion {
+    width: 90%;
+    height: 85%;
+    z-index: 2;
+}
+
+#configurar-sesion .caja-input{
+    display: grid;
+    margin: 50px;
+}
+
+#configurar-sesion label{
+    font-size: 1.4em;
+    margin-bottom: 30px;
 }

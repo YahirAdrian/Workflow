@@ -10,15 +10,10 @@ class TimeLine{
     }
     
     defineTimeObjects(){
-        this.startTimeObject = {
-            hours: parseInt(this.startTime.substr(this.startTime.indexOf(':')-1, 1)),
-            minutes: parseInt(this.startTime.substr(this.startTime.indexOf(':')+1, 2)),
-        }
+        debugger;
+        this.startTimeObject = parseStringToTime(this.startTime);
         
-        this.endTimeObject = {
-            hours: parseInt(this.endTime.substr(this.endTime.indexOf(':')-2, 2)),
-            minutes: parseInt(this.endTime.substr(this.endTime.indexOf(':')+1, 2))
-        }
+        this.endTimeObject = parseStringToTime(this.endTime);
     }
     
     start(){

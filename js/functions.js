@@ -1,6 +1,12 @@
-import { navCompoments, clockComponents, timeLineComponents, newMarkAlertComponents} from './components.js';
+import { 
+    navCompoments,
+    clockComponents,
+    timeLineComponents,
+    newMarkAlertComponents,
+    configAlertComponents} from './components.js';
 import Mark from './Objects/Mark.js';
 import Session from './Objects/session.js';
+import TimeLine from './Objects/Timeline.js';
 import App from './Objects/WorkFlow.js';
 
 const daysOfWeek = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
@@ -29,6 +35,19 @@ function addEventsToNavBar(){
 function addEventsToTimeLine(){
     timeLineComponents.newTaskButton.addEventListener('click', ()=> {
         newMarkAlertComponents.alert.style.display="block";
+    });
+
+    configAlertComponents.form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const {configAlert, startTimeInput, endTimeInput} = configAlertComponents;
+        const session = new Session({}, new TimeLine(startTimeInput.value, endTimeInput.value, []));
+        localStorage.setItem('session', JSON.stringify(session));
+
+        app.setSession(session);
+        app.setTimeline(new TimeLine(startTimeInput.value, endTimeInput.value, []));
+        app.getTimeLine().start();
+        configAlert.style.display = "none";
+        console.log("Submit");
     });
 }
 
@@ -102,8 +121,6 @@ function getSession(){
         return new Session(session.data, session.timeline);
 
     }else{
-        //Open a form to create a session workflow
-        console.log('Not sesssion found')
         return null;
     }
 }
@@ -111,7 +128,7 @@ function getSession(){
 function parseStringToTime(stringTime){
     return {
         hours: stringTime.length === 4? parseInt(stringTime.substr(stringTime.indexOf(':')-1, 1)) : parseInt(stringTime.substr(stringTime.indexOf(':')-2, 2)),
-        minutes: parseInt(stringTime.substr(stringTime.indexOf(':')+1, 2)),
+        minutes:parseInt(stringTime.substr(stringTime.indexOf(':'), 2)),
     };
 }
 

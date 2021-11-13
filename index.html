@@ -48,6 +48,24 @@
         </header>
 
         <section id="seccion-principal">
+            <div class="alert" style="display: none" id="config-alert">
+                <form action="#" id="configurar-sesion">
+                    <h1 style="text-align: center;">¡Bienvenido a workflow</h1>
+                    <h2>Comienza creando una linea del tiempo tu tiempo de trabajo</h2>
+                    <div class="caja-input">
+                        <label for="hora-inicio">Hora de inicio</label>
+                        <input type="time" id="hora-inicio" required/>
+                    </div>
+                    <div class="caja-input">
+                        <label for="hora-termino">Hora de término</label>
+                        <input type="time" id="hora-termino"required/>
+                    </div>
+    
+                    <input type="submit" value="Comenzar" id="config-submit">
+                </form>
+
+            </div>
+
             <div class="fecha-y-hora">
                 <span id="hora">12:27 PM</span>
                 <span id="fecha">Jueves 1 de Junio del 2021</span>

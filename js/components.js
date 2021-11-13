@@ -36,9 +36,17 @@ const newMarkAlertComponents = {
     btnSubmit: document.querySelector('#submit-marca')
 }
 
+const configAlertComponents = {
+    configAlert: document.querySelector('#config-alert'),
+    form: document.querySelector('#configurar-sesion'),
+    startTimeInput: document.querySelector('#hora-inicio'),
+    endTimeInput: document.querySelector('#hora-termino'),
+    sumbit: document.querySelector('#config-submit')
+}
 export {
     navCompoments,
     clockComponents,
     timeLineComponents,
-    newMarkAlertComponents
+    newMarkAlertComponents,
+    configAlertComponents
 };
